@@ -34,7 +34,7 @@ resource "aws_instance" "ansible-master" {
   }
 }
 
-resource "aws_instance" "n1" {
+resource "aws_instance" "node1" {
   ami                    = "ami-05a36e1502605b4aa"
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.ecomm-public-subnet.id
