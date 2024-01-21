@@ -15,7 +15,7 @@ resource "aws_instance" "ansible-master" {
   provisioner "remote-exec" {
     inline = [
       "sudo yum -y install git",
-      "git clone https://github.com/beaustar2/Ansible-tf-project1.git",
+      "git clone https://github.com/beaustar2/Ansible.git",
       "cd Ansible-tf-project1",
       "sudo chmod 400 kiki.pem",
       "sudo yum -y install epel-release",
