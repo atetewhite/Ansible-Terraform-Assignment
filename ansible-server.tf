@@ -16,7 +16,7 @@ resource "aws_instance" "ansible-master" {
     inline = [
       "sudo yum -y install git",
       "git clone https://github.com/beaustar2/Ansible.git",
-      "cd Ansible-tf-project1",
+      "cd Ansible",
       "sudo chmod 400 kiki.pem",
       "sudo yum -y install epel-release",
       "sudo yum -y install ansible",
