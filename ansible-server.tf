@@ -12,17 +12,18 @@ resource "aws_instance" "ansible-master" {
     Name = "Ansible Master"
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "sudo yum -y install git",
-      "git clone https://github.com/beaustar2/Ansible.git",
-      "cd Ansible",
-      "sudo chmod 400 kiki.pem",
-      "sudo yum -y install epel-release",
-      "sudo yum -y install ansible",
-      "ansible -m ping -i host.ini node1",
-      "ansible-playbook setup-ecomm.yaml -i host.ini",
-    ]
+ provisioner "remote-exec" {
+  inline = [
+    "sudo yum -y install git",
+    "git clone https://github.com/beaustar2/Ansible.git",
+    "cd Ansible",
+    "sudo chmod 400 kiki.pem",
+    "sudo yum -y install epel-release",
+    "sudo yum -y install ansible",
+    "ansible -m ping -i host.ini node1",
+    "ansible-playbook Ansible/setup-ecomm.yaml -i host.ini",
+  ]
+
 
     connection {
       type        = "ssh"
